@@ -5,8 +5,8 @@ pipeline {
     }
     parameters {
         string(name: 'branch_new', defaultValue: 'jenkins_branche', description: 'New branch')
-        choice(name: 'repository_branch', choices: ['master', 'feature_1', 'feature_2'], description: 'Choice branch')
-        string(name: 'repository_url', defaultValue: 'git@github.com:ZikFred/Jenkins.git', description: 'Github repository url')
+        choice(name: 'repository_branch', choices: ['master', 'firstBranch'], description: 'Choice branch')
+        string(name: 'repository_url', defaultValue: 'git@github.com:romabak/jenkinsFirst.git', description: 'Github repository url')
         booleanParam(name: 'remove', defaultValue: true, description: 'Remove package')
     }
     stages {
