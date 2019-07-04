@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                echo 'Jobs from git'
+                echo 'pipeline start with trigger poll scm'
             }
         }
     }
