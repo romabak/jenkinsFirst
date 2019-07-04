@@ -27,10 +27,7 @@ pipeline {
         }
         stage('Create Branch'){
             when{
-                equals { 
-                    expected: sh "git branch | grep ${params.branch_new}", 
-                    actual: params.branch_new
-                }
+                branch params.branch_new
             }
             steps {
                 sh "git checkout -b ${params.branch_new}"
