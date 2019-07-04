@@ -2,17 +2,18 @@ pipeline {
     agent any
     environment {
         BUILD = "${env.BUILD_ID}"
-    }
+    }       
     parameters {
         string(name: 'branch_new', defaultValue: 'jenkins_branche', description: 'New branch')
         choice(name: 'repository_branch', choices: ['master', 'firstBranch'], description: 'Choice branch')
         string(name: 'repository_url', defaultValue: 'git@github.com:romabak/jenkinsFirst.git', description: 'Github repository url')
+        choice(name: 'credentials', choices:['sshCentOs'], description: 'Choice credential')
         booleanParam(name: 'remove', defaultValue: true, description: 'Remove package')
     }
     stages {
         stage('Clone repository') {
             steps {
-                    git url: "${params.repository_url}", branch: "${params.repository_branch}"
+                git url: "${params.repository_url}", branch: "${params.repository_branch}", credentialsId: "${params.credentials}"
             }
         }
         stage('Checking repository'){
