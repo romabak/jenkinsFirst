@@ -1,5 +1,5 @@
 pipeline{
-    agent {lable 'backend'}
+    agent {label 'backend'}
     stage('Build'){
         steps{
             echo 'Hello World'
