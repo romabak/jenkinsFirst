@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Create Branch'){
             when{
-                expression { sh "git branch | grep ${params.branch_new}" == false }
+                expression { sh "git branch | grep ${params.branch_new}" == null }
             }
             steps {
                 sh "git checkout -b ${params.branch_new}"
