@@ -26,9 +26,6 @@ pipeline {
             }
         }
         stage('Create Branch'){
-            when{
-                branch params.branch_new
-            }
             steps {
                 sh "git checkout -b ${params.branch_new}"
                 sh "git branch"
