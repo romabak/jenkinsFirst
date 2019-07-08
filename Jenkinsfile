@@ -64,7 +64,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                deleteDir()
+                // deleteDir()
                 git url: "${params.repository_url}"
                 sh "git checkout ${params.branch_new}"
                 sh "echo 'Remote and Local branches are:'"
